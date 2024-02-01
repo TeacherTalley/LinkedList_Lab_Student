@@ -1,0 +1,15 @@
+/.DS_Store
+
+#VS Code
+.vscode
+
+# Build files
+/build
+LinkedList_AutoTest
+main
+tests
+
+# Visual Studio 2022
+*.sln
+*.vcxproj
+x64
