@@ -11,5 +11,10 @@ tests
 
 # Visual Studio 2022
 *.sln
-*.vcxproj
+*.vcxproj*
 x64
+Debug
+.vs
+Release
+
+
