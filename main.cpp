@@ -3,7 +3,7 @@
 #include "LinkedList.h"
 
 /*
-TODO: 
+TODO:
 Add your comment header here
 Display the welcome message to cout at the beginning of main:
 
@@ -11,12 +11,14 @@ Display the following message to cout at the end of the main:
 "Goodbye!"
 */
 
-int main() {
+int main()
+{
     LinkedList<int> myIntList1;
     LinkedList<std::string> myStringList1;
 
     std::cout << std::endl
               << "Test some integer lists..." << std::endl;
+
     // Add some elements to the list of integers
     myIntList1.push_back(10);
     myIntList1.push_back(20);
@@ -41,9 +43,12 @@ int main() {
     std::cout << "Length of list 1 is " << myIntList1.size() << std::endl;
 
     // Check if the stack is empty
-    if (myIntList1.empty()) {
+    if (myIntList1.empty())
+    {
         std::cout << "List 1 is empty" << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << "List 1 is not empty" << std::endl;
     }
 
@@ -81,28 +86,25 @@ int main() {
     std::cout << "Integer list 1:" << myIntList1.toString() << ":" << std::endl;
     std::cout << "Integer list 2:" << myIntList2.toString() << ":" << std::endl;
 
-    std::cout << "Integer list 2 via std cout: " 
+    std::cout << "Integer list 2 via std cout: "
               << myIntList2 << ":" << std::endl;
 
-
-    std::cout << std::endl << "Test some exceptions..." << std::endl;
+    std::cout << std::endl
+              << "Test some exceptions..." << std::endl;
     myIntList1.pop_back();
 
-    if (myIntList1.empty()) {
+    if (myIntList1.empty())
+    {
         std::cout << "List 1 is empty" << std::endl;
-    } else {
-        std::cout << "List 1 is not empty" << std::endl;
     }
-
-    try {
-        std::cout << "Front element: " << myIntList1.front() << std::endl;
-    } catch (std::out_of_range& e) {
-        std::cout << "Exception: " << e.what() << std::endl;
+    else
+    {
+        std::cout << "List 1 is not empty" << std::endl;
     }
 
     try
     {
-        std::cout << "Back element: " << myIntList1.back() << std::endl;
+        std::cout << "Front element: " << myIntList1.front() << std::endl;
     }
     catch (std::out_of_range &e)
     {
@@ -118,9 +120,14 @@ int main() {
     myStringList1.push_front("Please, may I");
     std::cout << "String list 1: " << myStringList1 << std::endl;
 
-    myStringList1.pop_back(); 
+    myStringList1.pop_back();
     myStringList1.pop_front();
     std::cout << "String list 1: " << myStringList1 << std::endl;
+
+    if (1 == 3)
+    {
+        std::cout << "This will never be printed" << std::endl;
+    }
 
     return 0;
 }
