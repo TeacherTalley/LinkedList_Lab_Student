@@ -124,10 +124,5 @@ int main()
     myStringList1.pop_front();
     std::cout << "String list 1: " << myStringList1 << std::endl;
 
-    if (1 == 3)
-    {
-        std::cout << "This will never be printed" << std::endl;
-    }
-
     return 0;
 }

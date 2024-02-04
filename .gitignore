@@ -2,6 +2,7 @@
 
 #VS Code
 .vscode
+info.*
 
 # Build files
 /build
