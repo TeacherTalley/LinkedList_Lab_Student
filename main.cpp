@@ -1,4 +1,16 @@
-#include <iostream>
+/**
+* ---------------------------------------------------------------------
+* @copyright
+* Copyright 2024 Michelle Talley University of Central Arkansas
+*
+* @author: <student name>
+* @course: Data Structures (CSCI 2320)
+*
+* @file main.cpp
+* @brief Driver program for Linked List Lab
+-----------------------------------------------------------------------
+*/ 
+#include<iostream>
 #include <string>
 #include "LinkedList.h"
 
@@ -31,7 +43,7 @@ int main()
     std::cout << "Front element: " << myIntList1.front() << std::endl;
     std::cout << "Back element: " << myIntList1.back() << std::endl;
 
-    // Pop elements from the stack
+    // Pop elements from the list
     std::cout << "Pop " << myIntList1.front() << std::endl;
     myIntList1.pop_front();
     std::cout << "Integer list: ";
@@ -42,7 +54,7 @@ int main()
     myIntList1.print();
     std::cout << "Length of list 1 is " << myIntList1.size() << std::endl;
 
-    // Check if the stack is empty
+    // Check if the list is empty
     if (myIntList1.empty())
     {
         std::cout << "List 1 is empty" << std::endl;
@@ -58,7 +70,7 @@ int main()
     myIntList1.pop_front();
     std::cout << "Integer list:" << myIntList1.toString() << ":" << std::endl;
 
-    // Check if the stack is empty
+    // Check if the list is empty
     if (myIntList1.empty())
     {
         std::cout << "List 1 is empty" << std::endl;

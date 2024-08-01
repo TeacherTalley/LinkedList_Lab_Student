@@ -1,6 +1,19 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+/**
+* ---------------------------------------------------------------------
+* @copyright
+* Copyright 2024 Michelle Talley University of Central Arkansas
+*
+* @author: <student name>
+* @course: Data Structures (CSCI 2320)
+*
+* @file LinkedList.h
+* @brief Declaration of the LinkedList class and its methods.
+-----------------------------------------------------------------------
+*/
+
 #include <iostream>
 #include <string>
 #include <sstream>
