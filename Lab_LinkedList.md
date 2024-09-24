@@ -33,22 +33,23 @@ Your output must be ***exactly*** the following to receive the points allocated 
 Welcome to the LinkedList test program.
 
 Test some integer lists...
-Integer list: 5 10 20 30
+Integer list 1: 5 10 20 30
 Front element: 5
 Back element: 30
-Pop 5
-Integer list: 10 20 30
-Pop 10
+Pop front: 5
+Integer list 1: 10 20 30
+Pop front: 10
 Integer list 1: 20 30
 Length of list 1 is 2
 List 1 is not empty
-Pop 20
-Pop 30
-Integer list::
+Pop back: 30
+Pop back: 20
+Integer list 1::
 List 1 is empty
 Integer list 1: 10 20 30
 Copy integer list 1 to integer list 2.
 Integer list 2: 10 20 30
+Pop 2 elements of the front of integer list 2.
 Integer list 1:30:
 Integer list 2:10 20 30:
 Integer list 2 via std cout: 10 20 30:
@@ -60,8 +61,27 @@ Back element: Exception: LinkedList is empty
 
 Test some string lists...
 String list 1: Please, may I have some spam?
-String list 1: have some
+
+Try inserting an element at position 3
+String list 1 has length 4
+String list 1: Please, may I have some more spam?
+
+Try inserting an element at the beginning
+String list 1: Sir!  Sir!  Please, may I have some more spam?
+
+Try inserting an element at the end
+String list 1: Sir!  Sir!  Please, may I have some more spam? I love spam!
+
+Try inserting an element out of range
+String list 1 has length 7
+Exception: Index out of range
+Expected failure trying to insert out of range
+
+Remove the first and last element and print result
+String list 1: Please, may I have some more spam?
+
 Goodbye!
+
 ```
 
 ##### Rubric
@@ -101,4 +121,3 @@ The following should be completed by the due date/time specified on Blackboard.
 
 
 <p style="font-size:120%;color:navy;background:linen;padding:10px;text-align:center">&copy; Copyright 2024 by Michelle Talley <br> <br>You may not publish this document on any website or share it with anyone without explicit permission of the author. </p>
-
