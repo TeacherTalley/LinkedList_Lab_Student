@@ -22,10 +22,10 @@ Implement the following methods for the LinkedList class in **`LinkedList.h`**:
 
 Implement the following in your main driver **`main.cpp`**.
 - Print this exact message at the beginning of your main before any output.
-**`Welcome to the LinkedList test program.`**
+**`Welcome to the LinkedList test program.` Follow by a newline.**
 
 - Print this exact message at the end of your main after all other output.
-**`Goodbye!`**
+**`Goodbye!` Follow by a newline.**
 
 #### Final output
 Your output must be ***exactly*** the following to receive the points allocated for output. 
@@ -79,32 +79,33 @@ Expected failure trying to insert out of range
 
 Remove the first and last element and print result
 String list 1: Please, may I have some more spam?
-
 Goodbye!
 
 ```
 
 ##### Rubric
 
-| Name              | Description                                             | Points |
-| ----------------- | ------------------------------------------------------- | ------ |
-| Main Output       | Run the student main and compare output required output | 5      |
-| Coding Style      | Run cpplint on student code to check coding style       | 5      |
-| Empty             | Test Method                                             | 1      |
-| Size              | Test Method                                             | 1      |
-| PushBackAndBack   | Test Method                                             | 15     |
-| PopBack           | Test Method                                             | 10     |
-| PopFront          | Test Method                                             | 10     |
-| PushFrontAndFront | Test Method                                             | 15     |
-| Insert            | Test Method                                             | 20     |
-| Erase             | Test Method                                             | 1      |
-| FrontException    | Test Method                                             | 1      |
-| BackException     | Test Method                                             | 1      |
-| PopBackException  | Test Method                                             | 5      |
-| PopFrontException | Test Method                                             | 5      |
-| InsertException   | Test Method                                             | 5      |
-| Print             | Test Method                                             | 0      |
-| Total Points      |                                                         | 100    |
+| Name              | Description                                                         | Points |
+| ----------------- | ------------------------------------------------------------------- | ------ |
+| AutoTest Setup    | Install test code, copy student source, build student and test code | 0      |
+| Main Output       | Run student main and compare output to test                         | 15     |
+| Coding Style      | Run cpplint on student code                                         | 5      |
+| Empty             |                                                                     | 1      |
+| Size              |                                                                     | 1      |
+| PushBackAndBack   |                                                                     | 10     |
+| PopBack           |                                                                     | 10     |
+| PopFront          |                                                                     | 10     |
+| PushFrontAndFront |                                                                     | 10     |
+| Insert            |                                                                     | 15     |
+| Erase             |                                                                     | 1      |
+| FrontException    |                                                                     | 1      |
+| BackException     |                                                                     | 1      |
+| PopBackException  |                                                                     | 5      |
+| PopFrontException |                                                                     | 5      |
+| InsertException   |                                                                     | 5      |
+| EraseException    |                                                                     | 4      |
+| Print             |                                                                     | 1      |
+| Total Points      |                                                                     | 100    |         | 100    |
 
 #### Due Dates and Honor
 The due date is specified on Blackboard. 
