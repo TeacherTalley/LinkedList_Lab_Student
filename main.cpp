@@ -9,8 +9,8 @@
 * @file main.cpp
 * @brief Driver program for Linked List Lab
 -----------------------------------------------------------------------
-*/ 
-#include<iostream>
+*/
+#include <iostream>
 #include <string>
 #include "LinkedList.h"
 
@@ -116,7 +116,7 @@ int main()
 
     try
     {
-       // use 2 statements to avoid awkward buffering issue on Windows
+        // use 2 statements to avoid awkward buffering issue on Windows
         std::cout << "Front element: ";
         std::cout << myIntList1.front() << std::endl;
     }
@@ -147,7 +147,7 @@ int main()
 
     // Try inserting elements
     std::cout << "\nTry inserting an element at position 3" << std::endl;
-    std::cout << "String list 1 has length " << myStringList1.size() 
+    std::cout << "String list 1 has length " << myStringList1.size()
               << std::endl;
     try
     {
@@ -163,6 +163,8 @@ int main()
     try
     {
         myStringList1.insert(0, "Sir!  Sir! ");
+        std::cout << "String list 1 has length " << myStringList1.size()
+                  << std::endl;
     }
     catch (std::out_of_range &e)
     {
@@ -174,6 +176,8 @@ int main()
     try
     {
         myStringList1.insert(myStringList1.size(), "I love spam!");
+        std::cout << "String list 1 has length " << myStringList1.size()
+                  << std::endl;
     }
     catch (std::out_of_range &e)
     {
@@ -182,14 +186,14 @@ int main()
     std::cout << "String list 1: " << myStringList1 << std::endl;
 
     // Try inserting an element out of range
-    std::cout << "\nTry inserting an element out of range" 
+    std::cout << "\nTry inserting an element out of range"
               << std::endl;
     std::cout << "String list 1 has length " << myStringList1.size()
               << std::endl;
     try
     {
         myStringList1.insert(myStringList1.size() + 10, "even more");
-        std::cout << "Unexpected success trying to insert out of range" 
+        std::cout << "Unexpected success trying to insert out of range"
                   << std::endl;
     }
     catch (std::out_of_range &e)
@@ -199,7 +203,7 @@ int main()
                   << std::endl;
     }
     std::cout << "\nRemove the first and last element and print result"
-              << std::endl;    
+              << std::endl;
     myStringList1.pop_back();
     myStringList1.pop_front();
     std::cout << "String list 1: " << myStringList1 << std::endl;
