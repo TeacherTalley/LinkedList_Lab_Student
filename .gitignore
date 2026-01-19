@@ -1,4 +1,4 @@
-/.DS_Store
+.DS_Store
 
 #VS Code
 .vscode
@@ -17,5 +17,7 @@ x64
 Debug
 .vs
 Release
+
+main.dSYM/*
 
 

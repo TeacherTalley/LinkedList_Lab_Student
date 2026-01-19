@@ -1,0 +1,200 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: AutoTest Setup
+      id: autotest-setup
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: AutoTest Setup
+        setup-command: git clone https://github.com/TeacherTalley/LinkedList_AutoTest.git
+        command: cd LinkedList_AutoTest && ./AutoTest_setup.sh
+        timeout: 10
+        max-score: 0
+    - name: Main Output
+      id: main-output
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Main Output
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_OutputTest.sh LinkedList_AutoTest/build"
+        timeout: 10
+        max-score: 15
+    - name: Coding Style
+      id: coding-style
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Coding Style
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_Style.sh LinkedList_AutoTest main.cpp LinkedList.h"
+        timeout: 10
+        max-score: 5
+    - name: Empty
+      id: empty
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Empty
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.Empty"
+        timeout: 10
+        max-score: 1
+    - name: Size
+      id: size
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Size
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.Size"
+        timeout: 10
+        max-score: 1
+    - name: PushBackAndBack
+      id: pushbackandback
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PushBackAndBack
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PushBackAndBack"
+        timeout: 10
+        max-score: 10
+    - name: PopBack
+      id: popback
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PopBack
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PopBack"
+        timeout: 10
+        max-score: 10
+    - name: PopFront
+      id: popfront
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PopFront
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PopFront"
+        timeout: 10
+        max-score: 10
+    - name: PushFrontAndFront
+      id: pushfrontandfront
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PushFrontAndFront
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PushFrontAndFront"
+        timeout: 10
+        max-score: 10
+    - name: Insert
+      id: insert
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insert
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.Insert"
+        timeout: 10
+        max-score: 15
+    - name: Erase
+      id: erase
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Erase
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.Erase"
+        timeout: 10
+        max-score: 1
+    - name: FrontException
+      id: frontexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: FrontException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.FrontException"
+        timeout: 10
+        max-score: 1
+    - name: BackException
+      id: backexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: BackException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.BackException"
+        timeout: 10
+        max-score: 1
+    - name: PopBackException
+      id: popbackexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PopBackException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PopBackException"
+        timeout: 10
+        max-score: 5
+    - name: PopFrontException
+      id: popfrontexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: PopFrontException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.PopFrontException"
+        timeout: 10
+        max-score: 5
+    - name: InsertException
+      id: insertexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: InsertException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.InsertException"
+        timeout: 10
+        max-score: 5
+    - name: EraseException
+      id: eraseexception
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: EraseException
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.EraseException"
+        timeout: 10
+        max-score: 4
+    - name: Print
+      id: print
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Print
+        setup-command: ''
+        command: "./LinkedList_AutoTest/AutoTest_gtest.sh LinkedListTest.Print"
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        AUTOTEST-SETUP_RESULTS: "${{steps.autotest-setup.outputs.result}}"
+        MAIN-OUTPUT_RESULTS: "${{steps.main-output.outputs.result}}"
+        CODING-STYLE_RESULTS: "${{steps.coding-style.outputs.result}}"
+        EMPTY_RESULTS: "${{steps.empty.outputs.result}}"
+        SIZE_RESULTS: "${{steps.size.outputs.result}}"
+        PUSHBACKANDBACK_RESULTS: "${{steps.pushbackandback.outputs.result}}"
+        POPBACK_RESULTS: "${{steps.popback.outputs.result}}"
+        POPFRONT_RESULTS: "${{steps.popfront.outputs.result}}"
+        PUSHFRONTANDFRONT_RESULTS: "${{steps.pushfrontandfront.outputs.result}}"
+        INSERT_RESULTS: "${{steps.insert.outputs.result}}"
+        ERASE_RESULTS: "${{steps.erase.outputs.result}}"
+        FRONTEXCEPTION_RESULTS: "${{steps.frontexception.outputs.result}}"
+        BACKEXCEPTION_RESULTS: "${{steps.backexception.outputs.result}}"
+        POPBACKEXCEPTION_RESULTS: "${{steps.popbackexception.outputs.result}}"
+        POPFRONTEXCEPTION_RESULTS: "${{steps.popfrontexception.outputs.result}}"
+        INSERTEXCEPTION_RESULTS: "${{steps.insertexception.outputs.result}}"
+        ERASEEXCEPTION_RESULTS: "${{steps.eraseexception.outputs.result}}"
+        PRINT_RESULTS: "${{steps.print.outputs.result}}"
+      with:
+        runners: autotest-setup,main-output,coding-style,empty,size,pushbackandback,popback,popfront,pushfrontandfront,insert,erase,frontexception,backexception,popbackexception,popfrontexception,insertexception,eraseexception,print
