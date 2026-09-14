@@ -7,6 +7,15 @@ Learn how to implement and use a LinkedList ADT in C++.
 #### Lab Overview
 You will receive a partial implementation of a LinkedList in C++.  Your mission is to implement some of the methods for the class as well as understand all the other methods.
 
+#### AI policy
+Generative artificial intelligence (AI) programs, such as ChatGPT, may not be used 
+for any work or assignments required in this course. The use of generative AI
+programs undermines the programming requirements and critical thinking skills that are
+vital to achieving our learning outcomes. Submission of partial or complete work from
+generative AI programs is not permitted and will be treated as plagiarism as
+defined in UCA’s Academic Integrity Policy and handled in accordance with the
+procedure outlined therein.
+
 #### Lab Tasks
 
 **Task 1**
